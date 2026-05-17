@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Madelyn Benedetti | Geophysics Researcher</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a18;
+    --ink-muted: #5a5a54;
+    --ink-faint: #9a9a90;
+    --paper: #faf9f6;
+    --paper-warm: #f3f1eb;
+    --paper-card: #ffffff;
+    --accent: #2d5a4e;
+    --accent-light: #e8f0ee;
+    --accent-mid: #4a8a75;
+    --border: #dddbd3;
+    --border-light: #eae8e0;
+    --serif: 'Lora', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+    --mono: 'DM Mono', monospace;
+    --max: 860px;
+    --radius: 6px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250,249,246,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-light);
+    padding: 0 2rem;
+  }
+  .nav-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+  }
+  .nav-name {
+    font-family: var(--serif);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+  }
+  .nav-links {
+    display: flex;
+    gap: 1.75rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 0.875rem;
+    color: var(--ink-muted);
+    text-decoration: none;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    transition: color 0.15s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* ── LAYOUT ── */
+  main { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
+  section { padding: 4rem 0; border-bottom: 1px solid var(--border-light); }
+  section:last-child { border-bottom: none; }
+
+  /* ── HERO ── */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 3rem;
+    align-items: start;
+    padding: 4.5rem 0 4rem;
+  }
+  .hero-text h1 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+  }
+  .hero-text .title-line {
+    font-size: 1rem;
+    color: var(--accent);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+  .hero-text p {
+    font-size: 1.05rem;
+    color: var(--ink-muted);
+    max-width: 540px;
+    line-height: 1.75;
+    margin-bottom: 1.75rem;
+  }
+  .hero-links {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.875rem;
+    font-family: var(--sans);
+    font-weight: 500;
+    padding: 0.55rem 1.1rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    transition: all 0.15s;
+    border: 1px solid transparent;
+    cursor: pointer;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+  }
+  .btn-primary:hover { background: #224a3f; border-color: #224a3f; }
+  .btn-secondary {
+    background: transparent;
+    color: var(--ink);
+    border-color: var(--border);
+  }
+  .btn-secondary:hover { background: var(--paper-warm); border-color: var(--ink-faint); }
+
+  .avatar-wrap {
+    width: 148px;
+    flex-shrink: 0;
+  }
+  .avatar {
+    width: 148px;
+    height: 148px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-light) 0%, #c8ddd8 100%);
+    border: 3px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--serif);
+    font-size: 2.75rem;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: -0.02em;
+  }
+
+  /* ── SECTION HEADINGS ── */
+  .section-label {
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-size: 1.65rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 2.25rem;
+    letter-spacing: -0.01em;
+  }
+
+  /* ── INFO CHIPS ── */
+  .info-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2.5rem;
+  }
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.8rem;
+    color: var(--ink-muted);
+    background: var(--paper-warm);
+    border: 1px solid var(--border-light);
+    border-radius: 100px;
+    padding: 0.28rem 0.85rem;
+  }
+  .chip svg { width: 13px; height: 13px; stroke: var(--ink-faint); }
+
+  /* ── RESEARCH CARDS ── */
+  .research-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .research-card {
+    background: var(--paper-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.5rem 1.75rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .research-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--accent);
+    border-radius: 3px 0 0 3px;
+  }
+  .research-card:hover {
+    border-color: var(--accent-mid);
+    box-shadow: 0 4px 20px rgba(45,90,78,0.08);
+  }
+  .research-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+  }
+  .research-card h3 {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.35;
+  }
+  .research-date {
+    font-size: 0.78rem;
+    color: var(--ink-faint);
+    white-space: nowrap;
+    font-family: var(--mono);
+    padding-top: 0.15rem;
+  }
+  .research-card p {
+    font-size: 0.93rem;
+    color: var(--ink-muted);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+  .tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .tag {
+    font-size: 0.75rem;
+    font-family: var(--mono);
+    color: var(--accent);
+    background: var(--accent-light);
+    border-radius: 4px;
+    padding: 0.2rem 0.55rem;
+    font-weight: 500;
+  }
+
+  /* ── EXPERIENCE ── */
+  .experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .exp-item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 0 2rem;
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .exp-item:last-child { border-bottom: none; }
+  .exp-date {
+    font-size: 0.78rem;
+    font-family: var(--mono);
+    color: var(--ink-faint);
+    padding-top: 0.2rem;
+    line-height: 1.5;
+  }
+  .exp-content h3 {
+    font-family: var(--serif);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.15rem;
+  }
+  .exp-org {
+    font-size: 0.85rem;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 0.65rem;
+  }
+  .exp-content ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+  .exp-content ul li {
+    font-size: 0.9rem;
+    color: var(--ink-muted);
+    line-height: 1.6;
+    padding-left: 1.1rem;
+    position: relative;
+  }
+  .exp-content ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--ink-faint);
+    font-size: 0.8rem;
+  }
+
+  /* ── SKILLS ── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+  }
+  .skill-group {
+    background: var(--paper-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.25rem 1.4rem;
+  }
+  .skill-group-title {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    font-weight: 500;
+    margin-bottom: 0.85rem;
+  }
+  .skill-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .skill-pill {
+    font-size: 0.8rem;
+    font-family: var(--mono);
+    color: var(--ink);
+    background: var(--paper-warm);
+    border: 1px solid var(--border-light);
+    border-radius: 4px;
+    padding: 0.22rem 0.6rem;
+  }
+
+  /* ── EDUCATION ── */
+  .edu-card {
+    background: var(--paper-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.5rem 1.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .edu-card h3 {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.2rem;
+  }
+  .edu-degree {
+    font-size: 0.9rem;
+    color: var(--ink-muted);
+    margin-bottom: 0.5rem;
+  }
+  .edu-gpa {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.8rem;
+    font-family: var(--mono);
+    color: var(--accent);
+    background: var(--accent-light);
+    border-radius: 4px;
+    padding: 0.2rem 0.6rem;
+    font-weight: 500;
+  }
+  .edu-right {
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .edu-school {
+    font-size: 0.85rem;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+  }
+  .edu-year {
+    font-size: 0.78rem;
+    font-family: var(--mono);
+    color: var(--ink-faint);
+  }
+
+  /* ── CONTACT / FOOTER ── */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+  .contact-intro p {
+    font-size: 0.97rem;
+    color: var(--ink-muted);
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+  }
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--ink);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .contact-link:hover { color: var(--accent); }
+  .contact-link-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    background: var(--paper-warm);
+    border: 1px solid var(--border-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .contact-link-icon svg {
+    width: 16px;
+    height: 16px;
+    stroke: var(--ink-muted);
+  }
+
+  footer {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 2rem 2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: var(--ink-faint);
+    border-top: 1px solid var(--border-light);
+  }
+  footer a { color: var(--ink-faint); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-text { animation: fadeUp 0.55s ease both; }
+  .avatar-wrap { animation: fadeUp 0.55s 0.1s ease both; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 640px) {
+    .hero { grid-template-columns: 1fr; }
+    .avatar-wrap { display: none; }
+    .exp-item { grid-template-columns: 1fr; gap: 0.25rem; }
+    .exp-date { font-size: 0.75rem; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .edu-card { flex-direction: column; }
+    .edu-right { text-align: left; }
+    nav { padding: 0 1rem; }
+    main { padding: 0 1rem; }
+    footer { padding: 1.5rem 1rem 2.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-name">Madelyn Benedetti</a>
+    <ul class="nav-links">
+      <li><a href="#research">Research</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-text">
+      <div class="title-line">Geophysicist &amp; Undergraduate Researcher</div>
+      <h1>Madelyn Benedetti</h1>
+      <div class="info-row" style="margin-top:0.75rem;">
+        <span class="chip">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          Virginia Tech
+        </span>
+        <span class="chip">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Graduating Dec 2026
+        </span>
+        <span class="chip">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Hillsborough, NJ
+        </span>
+      </div>
+      <p>
+        I'm a geophysics undergraduate at Virginia Tech with a 4.0 GPA, researching
+        seismic wave propagation in Earth's critical zone and planetary surface mapping
+        for NASA's VenSAR mission. I'm seeking a master's program at the intersection
+        of geophysics, applied computing, and Earth science.
+      </p>
+      <div class="hero-links">
+        <a href="Madelyn_Benedetti_-_Resume.pdf" class="btn btn-primary" download>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download CV
+        </a>
+        <a href="mailto:mbenedetti212@vt.edu" class="btn btn-secondary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Get in touch
+        </a>
+      </div>
+    </div>
+    <div class="avatar-wrap">
+      <div class="avatar">MB</div>
+    </div>
+  </div>
+
+  <!-- RESEARCH -->
+  <section id="research">
+    <div class="section-label">Research</div>
+    <div class="section-title">Projects &amp; Investigations</div>
+    <div class="research-grid">
+
+      <div class="research-card">
+        <div class="research-card-header">
+          <h3>Low-Stress Seismic Tomography in Earth's Critical Zone</h3>
+          <span class="research-date">Aug 2025 – Present</span>
+        </div>
+        <p>
+          Independently designed and built a low-stress seismic tomography apparatus to establish
+          ground-truth seismic wave velocities in the critical zone — Earth's thin outer shell where
+          rock meets life. Developed custom Python pipelines for processing seismic arrivals, computing
+          multi-media wave velocities, and generating high-resolution tomographic models. Designed
+          cross-borehole tomography and soil-compaction instrumentation to advance effective medium theory.
+        </p>
+        <div class="tag-row">
+          <span class="tag">Seismic Tomography</span>
+          <span class="tag">Python</span>
+          <span class="tag">Critical Zone</span>
+          <span class="tag">Geophysics</span>
+          <span class="tag">Inversion</span>
+        </div>
+      </div>
+
+      <div class="research-card">
+        <div class="research-card-header">
+          <h3>Surface Analysis of Venus — NASA VenSAR Mission</h3>
+          <span class="research-date">Nov 2024 – Aug 2025</span>
+        </div>
+        <p>
+          Collaborated on target selection and geospatial analysis for NASA's upcoming VenSAR radar
+          mission. Generated and processed 15 radar maps in JMARS, identifying and classifying major
+          volcanic and tectonic surface features to guide the mission's imaging priorities. Contributed
+          to surface region analysis for one of the first dedicated Venus radar mapping campaigns in decades.
+        </p>
+        <div class="tag-row">
+          <span class="tag">Planetary Science</span>
+          <span class="tag">Radar Imagery</span>
+          <span class="tag">JMARS</span>
+          <span class="tag">NASA VenSAR</span>
+          <span class="tag">Venus</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="section-label">Education</div>
+    <div class="section-title">Academic Background</div>
+    <div class="edu-card">
+      <div>
+        <h3>Virginia Tech</h3>
+        <div class="edu-degree">B.S. in Geosciences, option in Geophysics · Minor in Astronomy</div>
+        <span class="edu-gpa">&#9733; GPA 4.0 / 4.0</span>
+      </div>
+      <div class="edu-right">
+        <div class="edu-school">Blacksburg, VA</div>
+        <div class="edu-year">Expected Dec 2026</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="section-label">Experience</div>
+    <div class="section-title">Work &amp; Leadership</div>
+    <div class="experience-list">
+
+      <div class="exp-item">
+        <div class="exp-date">May 2026 –<br>Present</div>
+        <div class="exp-content">
+          <h3>Engineering Technician Intern</h3>
+          <div class="exp-org">Dynamic Engineering Consultants, PC · Chester, NJ</div>
+          <ul>
+            <li>Conducted geotechnical field inspections including soil compaction monitoring, concrete placement tests, and material compliance verification.</li>
+            <li>Performed laboratory soil analyses for permeability, dry density, and moisture content; documented soil borings and test pit investigations.</li>
+            <li>Prepared inspection and laboratory data reports; coordinated sample and equipment transport across field sites.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-date">Aug 2024 –<br>Dec 2024</div>
+        <div class="exp-content">
+          <h3>Undergraduate Teaching Assistant</h3>
+          <div class="exp-org">Virginia Tech Department of Geosciences · Blacksburg, VA</div>
+          <ul>
+            <li>Assisted students with lab work and coursework during class; hosted 5 hours of weekly office hours in person and virtually.</li>
+            <li>Provided study strategies and helped integrate new students into the college environment.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-date">Aug 2024 –<br>Present</div>
+        <div class="exp-content">
+          <h3>Social Media Manager &amp; Shift Supervisor</h3>
+          <div class="exp-org">Virginia Tech Breakzone · Blacksburg, VA</div>
+          <ul>
+            <li>Supervised 1–3 student staff per shift; managed operations 10–20 hours per week.</li>
+            <li>Produced 30+ original graphics and coordinated weekly Instagram content strategy.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-label">Skills</div>
+    <div class="section-title">Tools &amp; Methods</div>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <div class="skill-group-title">Programming &amp; Computing</div>
+        <div class="skill-pills">
+          <span class="skill-pill">Python</span>
+          <span class="skill-pill">Linux</span>
+          <span class="skill-pill">GMT</span>
+          <span class="skill-pill">Siril</span>
+          <span class="skill-pill">Astrometrica</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Geospatial &amp; Mapping</div>
+        <div class="skill-pills">
+          <span class="skill-pill">ArcGIS Pro</span>
+          <span class="skill-pill">JMARS</span>
+          <span class="skill-pill">TranAX</span>
+          <span class="skill-pill">Autodesk</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Field &amp; Lab Methods</div>
+        <div class="skill-pills">
+          <span class="skill-pill">Seismic Refraction</span>
+          <span class="skill-pill">ERT</span>
+          <span class="skill-pill">GPR</span>
+          <span class="skill-pill">Gravity Surveys</span>
+          <span class="skill-pill">Magnetic Surveys</span>
+          <span class="skill-pill">Evident Acoustic</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Interests</div>
+        <div class="skill-pills">
+          <span class="skill-pill">Weightlifting</span>
+          <span class="skill-pill">Traveling</span>
+          <span class="skill-pill">Mandarin</span>
+          <span class="skill-pill">Hard Sci-Fi</span>
+          <span class="skill-pill">Video Games</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-label">Contact</div>
+    <div class="section-title">Get in Touch</div>
+    <div class="contact-grid">
+      <div class="contact-intro">
+        <p>
+          I'm actively exploring master's programs in geophysics and related Earth sciences,
+          with interests in near-surface geophysics, planetary science, and applied computational methods.
+          If you'd like to discuss research opportunities or potential collaborations, feel free to reach out.
+        </p>
+        <a href="Madelyn_Benedetti_-_Resume.pdf" class="btn btn-primary" download style="width:fit-content;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Full CV
+        </a>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:mbenedetti212@vt.edu" class="contact-link">
+          <div class="contact-link-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          mbenedetti212@vt.edu
+        </a>
+        <a href="tel:9088090462" class="contact-link">
+          <div class="contact-link-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.36 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          (908) 809-0462
+        </a>
+        <a href="https://github.com" class="contact-link" target="_blank" rel="noopener">
+          <div class="contact-link-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </div>
+          GitHub (add yours)
+        </a>
+        <a href="https://linkedin.com" class="contact-link" target="_blank" rel="noopener">
+          <div class="contact-link-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </div>
+          LinkedIn (add yours)
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span>© 2026 Madelyn Benedetti</span>
+  <span>Built with GitHub Pages</span>
+</footer>
+
+</body>
+</html>
